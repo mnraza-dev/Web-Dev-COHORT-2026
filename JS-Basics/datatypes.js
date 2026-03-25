@@ -13,6 +13,7 @@ const person = {
 }
 
 /**
+ * Copy Objects
  * USING SPREAD OPERATOR (...)
  * 
  * NOTE: Using spread operator, it won't work for the nested object.
@@ -26,6 +27,7 @@ const copyPerson = { ...person }
 // console.log("COPIED : ", copyPerson)
 
 /**
+ * Copy objects using
  * STRUCTURED CLONE 
 */
 
@@ -62,4 +64,5 @@ clonedHP = 60;
 
 console.log("Original HP: ", originalHP)
 console.log("Cloned HP: ", clonedHP)
+
 
