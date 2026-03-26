@@ -82,7 +82,7 @@ select:hover {
 }
 
 .color {
-    height: 200px;
+    height: 180px;
     display: flex;
     justify-content: center;
     align-items: flex-end;

@@ -44,3 +44,5 @@ function generatePalette() {
     }
 }
 button.addEventListener('click', generatePalette)
+
+generatePalette()
