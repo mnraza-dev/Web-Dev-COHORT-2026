@@ -38,4 +38,9 @@ const bindReport = reportDelivery.bind(deliveryBoy, "Haridwar");
 console.log(bindReport("WHAT?"))
 // bind returns a function 
 
-
+/**
+ * 🧠 Easy Trick to Remember
+ *  call → comma
+ *  apply → array
+ *  bind → build function (later use)
+ */
