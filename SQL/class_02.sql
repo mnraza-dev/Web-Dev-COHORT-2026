@@ -1,0 +1,68 @@
+-- CREATE TABLE ipl_players(
+--     player_id SERIAL PRIMARY KEY,
+--     name VARCHAR(100) NOT NULL,
+--     team VARCHAR(50),
+--     role VARCHAR(50),
+--     runs_scored INT CHECK (runs_scored > 0),
+--     wickets_taken INT CHECK (wickets_taken >= 0),
+--     auction_price INT
+-- );
+--
+--
+-- ALTER TABLE ipl_players 
+-- ADD COLUMN nickname VARCHAR(50);
+--
+--
+-- INSERT INTO ipl_players (name, team, role, runs_scored, wickets_taken, auction_price, nickname)
+-- VALUES
+-- -- 1 (Top)
+-- ('MS Dhoni', 'CSK', 'Wicketkeeper-Batsman', 5000, 0, 12000000, 'Thala'),
+-- -- 2-10
+-- ('Virat Kohli', 'RCB', 'Batsman', 7500, 4, 15000000, 'King Kohli'),
+-- ('Rohit Sharma', 'MI', 'Batsman', 6200, 15, 16000000, 'Hitman'),
+-- ('KL Rahul', 'LSG', 'Wicketkeeper-Batsman', 4100, 0, 17000000, 'KL'),
+-- ('Shubman Gill', 'GT', 'Batsman', 2800, 0, 8000000, 'Prince'),
+-- ('David Warner', 'DC', 'Batsman', 5800, 0, 12000000, 'Bull'),
+-- ('Jos Buttler', 'RR', 'Wicketkeeper-Batsman', 3200, 0, 10000000, 'Jos'),
+-- ('Rishabh Pant', 'DC', 'Wicketkeeper-Batsman', 3000, 0, 16000000, 'RP'),
+-- ('Hardik Pandya', 'MI', 'All-rounder', 2300, 50, 15000000, 'HP'),
+-- ('Andre Russell', 'KKR', 'All-rounder', 2000, 90, 12000000, 'Russell'),
+-- -- 11-20
+-- ('Ravindra Jadeja', 'CSK', 'All-rounder', 2500, 140, 14000000, 'Jaddu'),
+-- ('Ben Stokes', 'CSK', 'All-rounder', 2900, 28, 16000000, 'Stokesy'),
+-- ('Glenn Maxwell', 'RCB', 'All-rounder', 2600, 30, 11000000, 'Maxi'),
+-- ('Sunil Narine', 'KKR', 'All-rounder', 1000, 150, 8000000, 'Narine'),
+-- ('Rashid Khan', 'GT', 'Bowler', 500, 150, 15000000, 'Rash'),
+-- ('Jasprit Bumrah', 'MI', 'Bowler', 100, 145, 12000000, 'Boom'),
+-- ('Mohammed Shami', 'GT', 'Bowler', 200, 110, 10000000, 'Shami'),
+-- ('Bhuvneshwar Kumar', 'SRH', 'Bowler', 300, 140, 8000000, 'Bhuvi'),
+-- ('Yuzvendra Chahal', 'RR', 'Bowler', 200, 180, 6500000, 'Yuzi'),
+-- ('Kuldeep Yadav', 'DC', 'Bowler', 150, 120, 6000000, 'KD'),
+-- -- 21-30
+-- ('Sanju Samson', 'RR', 'Wicketkeeper-Batsman', 3500, 0, 14000000, 'Sanju'),
+-- ('Ishan Kishan', 'MI', 'Wicketkeeper-Batsman', 2700, 0, 15000000, 'Ishu'),
+-- ('Faf du Plessis', 'RCB', 'Batsman', 4000, 0, 7000000, 'Faf'),
+-- ('AB de Villiers', 'RCB', 'Batsman', 5000, 0, 11000000, 'Mr360'),
+-- ('Kane Williamson', 'SRH', 'Batsman', 2100, 0, 9000000, 'Kane'),
+-- ('Steve Smith', 'RR', 'Batsman', 2500, 20, 8000000, 'Smithy'),
+-- ('Mitchell Starc', 'KKR', 'Bowler', 100, 100, 14000000, 'Starc'),
+-- ('Trent Boult', 'RR', 'Bowler', 150, 110, 8000000, 'Boult'),
+-- ('Pat Cummins', 'SRH', 'All-rounder', 1500, 50, 15000000, 'Cummins'),
+-- ('Axar Patel', 'DC', 'All-rounder', 1800, 100, 9000000, 'Axar');
+-- SELECT name, nickname, team FROM ipl_players;
+--
+-- ! Filtering
+--
+-- SELECT * FROM ipl_players WHERE team = 'CSK';
+-- SELECT name,
+--     nickname,
+--     auction_price
+-- FROM ipl_players
+-- WHERE auction_price > 10;
+-- SELECT *
+-- from ipl_players
+-- WHERE role = 'All-rounder'
+--     AND wickets_taken > 10;
+--
+-- ! Pattern matching
+--
