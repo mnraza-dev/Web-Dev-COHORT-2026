@@ -2,7 +2,7 @@ const express = require("express");
 const PORT = process.env.PORT || 8000
 
 function basic_server() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         const app = express();
         app.use(express.json());
 

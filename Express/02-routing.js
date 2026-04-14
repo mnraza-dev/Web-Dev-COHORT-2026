@@ -44,7 +44,6 @@ function basic_http_methods() {
                 error: "No train on this route"
             })
             res.json(route);
-
         })
 
         app.post("/route", (req, res) => {
@@ -83,9 +82,15 @@ function basic_http_methods() {
             const port = server.address().port;
             const base = `http://127.0.0.1:${port}`;
             try {
-                // List all Routes                 const listRes = await fetch(`${base}/routes`);
+                // List all Routes   
+                const listRes = await fetch(`${base}/routes`);
                 const listData = await listRes.json();
                 console.log(JSON.stringify(listData));
+
+                // Single Route 
+                const singleRoute = await fetch(`${base}/routes/1`);
+                const singleRouteData = await singleRoute.json();
+                console.log(JSON.stringify(singleRouteData));
 
                 //Add Route
                 const createRouteRes = await fetch(`${base}/routes`, {
@@ -102,16 +107,12 @@ function basic_http_methods() {
                 const createdRouteData = await createRouteRes.json();
                 console.log(JSON.stringify(createdRouteData));
 
-                // 
-
-
-
             } catch (error) {
                 console.log(error)
             }
 
             server.close(() => {
-                console.log("Basic Server 1 served......");
+                console.log("Basic Server closed...");
                 resolve();
             })
         })
