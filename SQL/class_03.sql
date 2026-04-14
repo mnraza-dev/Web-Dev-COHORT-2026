@@ -1,0 +1,41 @@
+-- create TABLE canteen_menu (
+--     item_id SERIAL PRIMARY KEY, 
+--     item_name VARCHAR(100),
+--     category VARCHAR(50),
+--     price INT,
+--     is_available BOOLEAN DEFAULT TRUE
+-- );
+-- INSERT INTO canteen_menu(item_name, category, price, is_available)
+-- VALUES ('Samosa', 'snacks', 20, TRUE),
+-- ('Vada Pav', 'snacks', 10, TRUE),
+-- ('Masala Tea', 'Beverages', 25, TRUE);
+--
+-- SELECT item_name,
+--     category AS canteen_item_category,
+--     price AS canteen_item_price
+-- from canteen_menu;
+--
+-- UPDATE canteen_menu
+-- SET price = 20
+-- WHERE item_name = 'Vada Pav';
+--
+-- UPDATE canteen_menu
+-- SET price = price + 10
+-- WHERE category = 'Beverages';
+--
+-- DELETE  from canteen_menu WHERE item_name = 'Samosa';
+--
+-- SELECT *
+-- FROM canteen_menu;
+--
+-- TRUNCATE TABLE canteen_menu;
+--
+-- INSERT INTO canteen_menu(item_name, category, price, is_available)
+-- VALUES ('Samosa', 'snacks', 20, TRUE),
+-- ('Vada Pav', 'snacks', 10, TRUE),
+-- ('Masala Tea', 'Beverages', 25, TRUE);
+--
+-- SELECT *
+-- FROM canteen_menu;
+--
+
