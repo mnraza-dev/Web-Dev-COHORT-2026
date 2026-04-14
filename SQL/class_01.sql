@@ -18,5 +18,5 @@
 --     address VARCHAR(100)
 -- );
 
-ALTER TABLE students
-ADD COLUMN batch_name VARCHAR(50) DEFAULT 'Web Dev 2026';
+-- ALTER TABLE students
+-- ADD COLUMN batch_name VARCHAR(50) DEFAULT 'Web Dev 2026';
