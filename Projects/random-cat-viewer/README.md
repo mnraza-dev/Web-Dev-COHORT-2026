@@ -1,16 +1,62 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🐱 Random Cat Viewer
+
+A modern React app that fetches and displays random cat images with a smooth, production-ready UI. Built with performance, UX, and clean architecture in mind.
 
 Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Features
+#### 🎯 Fetch random cat images from API
+#### ⚡ Skeleton loader (no layout shift)
+#### 🔁 Retry mechanism on failure
+#### ⏳ Loading & error state handling
+#### 🎨 Modern UI with TailwindCSS
+#### 🧠 Clean component architecture
+## 🛠 Tech Stack
+#### ⚛️ React (Hooks)
+#### 💨 TailwindCSS
+#### 🌐 Fetch API
+#### 🧩 Functional Components
 
 ## Expanding the ESLint configuration
+```bash
+📂 Project Structure
+src/
+│
+├── components/
+│   ├── CatCard.jsx
+│   ├── Skeleton.jsx
+│
+├── App.jsx
+├── main.jsx
+```
+### ⚙️ Installation & Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#####  Clone repo
+```bash 
+git clone  https://github.com/mnraza-dev/random-cat-viewer.git
+```
+## Start development server
+```bash
+npm run dev
+```
+## 🌐 API Used
+Random Cat API
+https://api.freeapi.app/api/v1/public/cats/cat/random
+
+## 💡 Usage
+```javascript 
+<CatCard
+  data={{
+    image,
+    loading,
+    error,
+    getRandomCatImage
+  }}
+/>
+```
+#### 🧑‍💻 Author - MN Raza
+#### ⭐ Contribute
+Feel free to fork, improve, and submit PRs!
+
+📜 License -
+MIT License
