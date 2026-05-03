@@ -43,7 +43,7 @@ const CatCard = ({ data = {} }) => {
       <button
         onClick={getRandomCatImage}
         disabled={loading}
-        className={`w-full py-2 rounded-lg text-white font-medium transition 
+        className={`w-full py-2 cursor-pointer rounded-lg text-white font-medium transition 
           ${loading
             ? "bg-gray-400 cursor-not-allowed"
             : "bg-black hover:bg-gray-800"

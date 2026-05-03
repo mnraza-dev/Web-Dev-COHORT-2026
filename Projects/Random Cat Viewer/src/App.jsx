@@ -18,8 +18,7 @@ const App = () => {
       setLoading(true);
       setError(null);
 
-      const response = await fetch(
-        "https://api.freeapi.app/api/v1/public/cats/cat/random",
+      const response = await fetch(import.meta.env.VITE_API_URL,
         { signal: controller.signal }
       );
 
