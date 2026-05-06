@@ -1,0 +1,222 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  /* === Torii Crimson (primary) === */
+  --color-primary-50:  #fff1f2;
+  --color-primary-100: #ffe4e6;
+  --color-primary-200: #fecdd3;
+  --color-primary-300: #fda4af;
+  --color-primary-400: #f47e94;
+  --color-primary-500: #e11d48;
+  --color-primary-600: #c0253e;
+  --color-primary-700: #991b1b;
+  --color-primary-800: #7f1d1d;
+  --color-primary-900: #450a0a;
+  --color-primary-950: #270506;
+
+  /* === Sumi Gold === */
+  --color-gold-300: #f5d78e;
+  --color-gold-400: #e8c068;
+  --color-gold-500: #c9a227;
+  --color-gold-600: #a07820;
+
+  /* === Sakura === */
+  --color-sakura-200: #ffc8db;
+  --color-sakura-300: #ffaac4;
+  --color-sakura-400: #ff7aaa;
+
+  --font-display: 'Noto Serif JP', serif;
+  --font-body:    'Inter', sans-serif;
+
+  /* Animations */
+  --animate-shimmer:  shimmer 2s linear infinite;
+  --animate-float:    float 7s ease-in-out infinite;
+  --animate-glow:     glow 3s ease-in-out infinite alternate;
+
+  @keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position:  200% 0; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+  }
+
+  @keyframes glow {
+    from { box-shadow: 0 0 10px rgba(192, 37, 62, 0.3); }
+    to   { box-shadow: 0 0 30px rgba(192, 37, 62, 0.7), 0 0 60px rgba(192, 37, 62, 0.2); }
+  }
+}
+
+/* =============================================
+   DARK JAPANESE PALETTE — Always dark mode
+   ============================================= */
+:root,
+.dark {
+  /* Backgrounds — layered ink */
+  --bg:          #09090d;   /* void black */
+  --bg-card:     #111118;   /* deep ink */
+  --bg-elevated: #16161f;   /* raised surface */
+  --bg-muted:    #1c1c28;   /* subtle fill */
+
+  /* Text */
+  --fg:          #f0ece4;   /* warm white — washi */
+  --fg-muted:    #8a8090;   /* muted lavender-grey */
+  --fg-subtle:   #4a4558;   /* very subtle */
+
+  /* Brand colours */
+  --crimson:     #c0253e;
+  --crimson-glow: rgba(192, 37, 62, 0.4);
+  --gold:        #c9a227;
+  --sakura:      #ff7aaa;
+
+  /* Borders */
+  --border:        rgba(192, 37, 62, 0.15);
+  --border-muted:  rgba(255, 255, 255, 0.06);
+  --border-bright: rgba(192, 37, 62, 0.45);
+
+  /* Shadows */
+  --shadow-card:   0 4px 32px rgba(0, 0, 0, 0.5), 0 1px 0 rgba(192, 37, 62, 0.08) inset;
+  --shadow-glow:   0 0 40px rgba(192, 37, 62, 0.25);
+}
+
+/* =============================================
+   BASE
+   ============================================= */
+@layer base {
+  * {
+    border-color: var(--border-muted);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    @apply antialiased;
+    /* Subtle noise grain texture */
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(192,37,62,0.07) 0%, transparent 70%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: rgba(192, 37, 62, 0.4);
+    color: #f0ece4;
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--crimson);
+    border-radius: 2px;
+  }
+}
+
+/* =============================================
+   COMPONENTS
+   ============================================= */
+@layer components {
+
+  /* === Glass card with Japanese ink border === */
+  .glass-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(12px);
+  }
+
+  .glass-card:hover {
+    border-color: var(--border-bright);
+    box-shadow: var(--shadow-card), 0 0 20px rgba(192, 37, 62, 0.08);
+  }
+
+  /* === Shimmer === */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--bg-muted) 0%,
+      var(--bg-elevated) 50%,
+      var(--bg-muted) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* === Crimson glow button === */
+  .btn-crimson {
+    background: linear-gradient(135deg, #c0253e, #9f1239);
+    color: white;
+    box-shadow: 0 4px 20px rgba(192, 37, 62, 0.35);
+    transition: all 0.2s ease;
+  }
+  .btn-crimson:hover {
+    box-shadow: 0 4px 30px rgba(192, 37, 62, 0.55);
+    transform: translateY(-1px);
+  }
+
+  /* === Japanese divider === */
+  .jp-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .jp-divider::before,
+  .jp-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(192,37,62,0.4), transparent);
+  }
+
+  /* === Torii badge === */
+  .torii-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.875rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-radius: 9999px;
+    border: 1px solid rgba(192, 37, 62, 0.4);
+    color: #f47e94;
+    background: rgba(192, 37, 62, 0.1);
+  }
+
+  /* === Ink tag pill === */
+  .ink-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.2rem 0.625rem;
+    font-size: 0.68rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    color: var(--fg-muted);
+    background: var(--bg-muted);
+    border: 1px solid var(--border-muted);
+  }
+
+  /* === Stat bar fill === */
+  .stat-fill {
+    height: 0.375rem;
+    border-radius: 9999px;
+    background: linear-gradient(to right, #c0253e, #e11d48, #f47e94);
+  }
+
+  /* === Glowing accent line === */
+  .torii-line {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c0253e, transparent);
+    box-shadow: 0 0 8px rgba(192, 37, 62, 0.6);
+  }
+}
