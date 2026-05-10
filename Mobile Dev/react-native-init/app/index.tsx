@@ -1,57 +1,41 @@
-import React, { useState } from 'react';
-import { Button, ScrollView, StyleSheet, Switch, Text } from 'react-native';
+import React from 'react'
+import { FlatList, Text, View } from 'react-native'
 
 const HomeScreen = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const items = Array.from({ length: 5 }, (_, i) => `Item ${i + 1}`);
+  const users = [
+
+    {
+      id: 1,
+      name: 'John Doe',
+      email: 'john.doe@example.com',
+      role: 'Designer'
+    },
+    {
+      id: 2,
+      name: 'Jane Smith',
+      email: 'jane.smith@example.com',
+      role: 'Developer'
+    },
+    {
+      id: 3,
+      name: 'Alice Johnson',
+      email: 'alice.johnson@example.com',
+      role: 'Manager'
+    }
+  ]
   return (
-    <ScrollView
-      contentContainerStyle={{
-        padding: 16,
-        alignItems: 'center',
-      }}
-      style={styles.container}>
-      <Text>Home Screen</Text>
-      {
-        items.map((item, index) => (
-          <Text style={styles.item} key={index}>{item}</Text>
-        ))
-      }
-      <Button
-        title="Go to Details"
-        onPress={() => { alert('Going to details...') }}
-        color="#08722f"
-      />
-
-      <Switch
-        value={isDarkMode}
-        onValueChange={setIsDarkMode}
-        trackColor={{ false: "#4f0996", true: "#051735" }}
-        thumbColor={isDarkMode ? "#f3f3f3" : "#661166"}
-      />
-
-
-
-    </ScrollView>
+    <FlatList
+      data={users}
+      keyExtractor={item => item.id.toString()}
+      renderItem={({ item }) => (
+        <View style={{ padding: 10, borderBottomWidth: 1, borderBottomColor: '#ebb8b8' }}>
+          <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{item.name}</Text>
+          <Text>{item.email}</Text>
+          <Text style={{ color: 'gray' }}>{item.role}</Text>
+        </View>
+      )}
+    />
   )
 }
-export default HomeScreen
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#eee',
-  },
-  item: {
-    backgroundColor: '#fff',
-    padding: 16,
-    borderRadius: 8,
-    marginBottom: 10,
-    shadowColor: "#000",
-    shadowOpacity: 0.5,
-    shadowRadius: 5,
-    elevation: 2,
-    height: 60,
-    width: '100%',
-  }
-})
+export default HomeScreen
