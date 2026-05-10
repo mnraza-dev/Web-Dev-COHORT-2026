@@ -5,11 +5,16 @@ const HomeScreen = () => {
   const items = Array.from({ length: 120 }, (_, i) => `Item ${i + 1}`);
 
   return (
-    <ScrollView>
+    <ScrollView
+      contentContainerStyle={{
+        padding: 16,
+        alignItems: 'center',
+      }}
+      style={styles.container}>
       <Text>Home Screen</Text>
       {
         items.map((item, index) => (
-          <Text key={index}>{item}</Text>
+          <Text style={styles.item} key={index}>{item}</Text>
         ))
       }
     </ScrollView>
@@ -19,5 +24,21 @@ const HomeScreen = () => {
 export default HomeScreen
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
 
+  },
+  item: {
+    backgroundColor: '#eee',
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 10,
+    shadowColor: "#000",
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    elevation: 2,
+    width: '100%',
+
+  }
 })
