@@ -9,10 +9,6 @@ const SafeScreen = () => {
                 'top',
 
             ]}
-
-            
-
-
             style={styles.container}>
 
             <Text>safe Screen</Text>

@@ -1,12 +1,42 @@
-import { StyleSheet } from "react-native";
-import SafeScreen from "./safescreen";
+import { StyleSheet, Text, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Index() {
-  return (
-    <>
+  const insets = useSafeAreaInsets();
 
-      {/* <UnsafeScreen /> */}
-      <SafeScreen /></>
+  console.log(insets)
+  return (
+    <View style={{
+      flex: 1, backgroundColor: '#bb88ec',
+      paddingTop: insets.top,
+      paddingBottom: insets.bottom
+
+    }}>
+      <Text style={{
+        color: 'white'
+      }}>Hi there</Text>
+      <Text style={{
+        color: 'white'
+      }}>Hi there</Text>
+      <Text style={{
+        color: 'white'
+      }}>Hi there</Text>
+      <Text style={{
+        color: 'white'
+      }}>Hi there</Text>
+      <Text style={{
+        color: 'white'
+      }}>Hi there</Text>
+      <Text style={{
+        color: 'white'
+      }}>Hi there</Text>
+      <Text style={{
+        color: 'white'
+      }}>Hi there</Text>
+      <Text style={{
+        color: 'white'
+      }}>Hi there</Text>
+    </View>
   );
 }
 
