@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StatusBar, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Index() {
@@ -12,6 +12,7 @@ export default function Index() {
       paddingBottom: insets.bottom
 
     }}>
+      <StatusBar barStyle={'dark-content'} />
       <Text style={{
         color: 'white'
       }}>Hi there</Text>
