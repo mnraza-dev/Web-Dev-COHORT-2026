@@ -18,7 +18,11 @@ export default function SignupScreen() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
+    const [focusedInput, setFocusedInput] = useState("");
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+
+    const [isInputFocused, setIsInputFocused] = useState(false);
 
     return (
         <SafeAreaView style={styles.container}>
@@ -53,7 +57,7 @@ export default function SignupScreen() {
 
                     <Text style={styles.label}>Email Address</Text>
 
-                    <View style={[styles.inputWrapper, styles.activeInput]}>
+                    <View style={[styles.inputWrapper, focusedInput === "email" && styles.activeInput]}>
                         <Ionicons name="mail-outline" size={20} color="#555" />
 
                         <TextInput
@@ -62,6 +66,7 @@ export default function SignupScreen() {
                             placeholder="Enter email"
                             style={styles.input}
                             placeholderTextColor="#888"
+                            onFocus={() => setFocusedInput("email")}
                         />
 
                         <TouchableOpacity>
@@ -72,7 +77,7 @@ export default function SignupScreen() {
                     {/* Password */}
                     <Text style={styles.label}>Password</Text>
 
-                    <View style={styles.inputWrapper}>
+                    <View style={[styles.inputWrapper, focusedInput === "password" && styles.activeInput]}>
                         <Ionicons name="lock-closed-outline" size={20} color="#555" />
 
                         <TextInput
@@ -82,6 +87,7 @@ export default function SignupScreen() {
                             secureTextEntry={!isPasswordVisible}
                             style={styles.input}
                             placeholderTextColor="#888"
+                            onFocus={() => setFocusedInput("password")}
                         />
 
                         <TouchableOpacity onPress={() =>
@@ -98,7 +104,7 @@ export default function SignupScreen() {
                     </View>
                     <Text style={styles.label}>Password Confirmation</Text>
 
-                    <View style={styles.inputWrapper}>
+                    <View style={[styles.inputWrapper, focusedInput === "passwordConfirmation" && styles.activeInput]}>
                         <Ionicons name="lock-closed-outline" size={20} color="#555" />
 
                         <TextInput
@@ -108,6 +114,7 @@ export default function SignupScreen() {
                             secureTextEntry={!isPasswordVisible}
                             style={styles.input}
                             placeholderTextColor="#888"
+                            onFocus={() => setFocusedInput("passwordConfirmation")}
 
                         />
 
