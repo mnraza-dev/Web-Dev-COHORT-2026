@@ -2,7 +2,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const HomePage = () => {
+const HomePage = async () => {
+  const res = await fetch(
+    "https://api.freeapi.app/api/v1/public/randomusers?page=1&limit=10"
+  );
+  const data = await res.json();
+  console.log(data);
+  
   return (
     <div>
       <h1 style={{
