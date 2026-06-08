@@ -7,6 +7,7 @@ const client = await checkOpenAI();
 export const askQuestion = async (system_prompt, user_prompt, history) => {
   const response = await client.chat.completions.create({
     model,
+    stream: true,
     messages: [
       { role: "system", content: system_prompt },
       ...history,
